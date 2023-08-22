@@ -1,5 +1,6 @@
 #include<stddef.h>
 #include<stdio.h>
+#include<stdlib.h>
 
 void scanArr(int* a, size_t len){
 	for(size_t i = 0; i < len; i++){
@@ -66,5 +67,12 @@ int compareArrays(int* a, size_t len_a, int* b, size_t len_b){
 				return 1;
 		}
 	return 0;
+	}
+}
+
+void nullCheck(void* ptr){
+	if(ptr == NULL){
+		printf("ERROR: Out of memory");
+		exit(0);
 	}
 }
