@@ -16,12 +16,8 @@ int main(void){
 	printArr(arr1, len1);
 	printf("Second array: ");
 	printArr(arr2, len2);
-	int* new_arr;
-	size_t new_len;
-	concatArr(arr1, len1, arr2, len2, &new_arr, &new_len);
-	printArr(new_arr, new_len);
+	printf("%d\n", findSubArr(arr1, len1, arr2, len2));
 	free(arr1);
 	free(arr2);
-	free(new_arr);
 	return 0;
 }

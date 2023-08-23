@@ -9,6 +9,24 @@ void scanArr(int* a, size_t len){
 	}
 }
 
+void scanDynArr(int** arr_to_ret, size_t* size_to_ret, size_t* capacity_to_ret){
+	size_t capacity = BASE_CAPACITY;
+	size_t size = 0;
+	int* arr = (int*) malloc(sizeof(int) * capacity);
+	nullCheck(arr);
+	do{
+		scanf("%d", &arr[size++]);
+		if(size >= capacity / 2){
+			capacity = capacity * 2;
+			arr = (int*) realloc(arr,sizeof(int) * capacity);
+			nullCheck(arr);
+		}
+	}while(arr[size - 1] != 0);
+	*arr_to_ret = arr;
+	*size_to_ret = size;
+	*capacity_to_ret = capacity;
+}
+
 void scanUArr(int** arr_to_ret, size_t* len_to_ret){
 	int* arr = NULL;
 	size_t len = 0;
@@ -23,6 +41,7 @@ void scanUArr(int** arr_to_ret, size_t* len_to_ret){
 		scanf("%d", &arr[len]);
 		len++;
 	} while(arr[len - 1] != 0);
+	len--;
 	*arr_to_ret = arr;
 	*len_to_ret = len;
 }
@@ -119,3 +138,39 @@ void concatArr(int* a, size_t len_a, int* b, size_t len_b, int** arr_to_ret, siz
 	*arr_to_ret = arr;
 	*len_to_ret = len;
 }
+
+
+int findSubArr(int* a, size_t len_a, int* b, size_t len_b){
+	if(len_b > len_a)
+		return -1;
+	for(size_t i = 0; i <= len_a - len_b; i++){
+		int matchFlag = 1;
+		for(size_t j = 0; j < len_b; j++){
+			if(a[i + j] != b[j]){
+				matchFlag = 0;
+				break;
+			}
+		}
+		if(matchFlag){
+			return i;
+		}
+	}
+	return -1;
+}
+
+void removeSubArr(int* a, size_t* len_a, int* b, size_t len_b){
+	int index = findSubArr(a, *len_a, b, len_b);
+	size_t len_to_ret = *len_a;
+	while(index > 0){
+		for(int i = index; i < len_to_ret - len_b; i++){
+			a[i] = a[i + len_b];
+		}
+		len_to_ret -= len_b;
+		printArr(a, len_to_ret);
+		index = findSubArr(a, len_to_ret, b, len_b);
+	}
+	*len_a = len_to_ret;
+}
+
+
+
