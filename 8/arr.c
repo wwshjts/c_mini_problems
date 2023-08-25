@@ -16,7 +16,7 @@ void scanDynArr(int** arr_to_ret, size_t* size_to_ret, size_t* capacity_to_ret){
 	nullCheck(arr);
 	do{
 		scanf("%d", &arr[size++]);
-		if(size >= capacity / 2){
+		if(size == capacity){
 			capacity = capacity * 2;
 			arr = (int*) realloc(arr,sizeof(int) * capacity);
 			nullCheck(arr);
