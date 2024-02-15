@@ -1,9 +1,8 @@
-#include<stdio.h>
-#include<stddef.h>
-#include"arr.h"
+#include <stdio.h>
+#include "arr.h"
 #define SIZE 10 
 
-int main(void){
+int main(void) {
 	int arr[SIZE];
 	scanArr(arr, SIZE);
 	printArr(arr, SIZE);

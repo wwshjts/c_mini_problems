@@ -1,3 +1,5 @@
+#include <stddef.h>
+
 #define BASE_CAPACITY 10
 
 void scanArr(int* a, size_t len);

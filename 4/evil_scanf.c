@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 
 void evil_scanf(int* p0, int* p1, int* p2);
 
@@ -9,17 +9,15 @@ int main(void){
 	return 0;
 }
 
-void evil_scanf(int* p0, int* p1, int* p2){
+void evil_scanf(int* p0, int* p1, int* p2) {
 	int n0, n1, n2;
 	scanf("%d %d %d", &n0, &n1, &n2);
-	if(n0 > 0){
+	if (n0 > 0) {
 		*p1 = n1;
 		*p2 = n2;
-	}
-	else{
+	} else {
 		*p2 = n0 * n1 * n2 * (*p1) * (*p2);
 		*p1 = *p0;
 	}
 	*p0 = n0;
-
 }

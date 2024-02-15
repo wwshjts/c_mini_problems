@@ -3,7 +3,7 @@
 
 unsigned int gcd(unsigned int a, unsigned int b);
 
-int main(void){
+int main() {
 	unsigned int x, y, res;
 	scanf("%u %u", &x, &y);
 	res = gcd(x, y);
@@ -11,16 +11,15 @@ int main(void){
 	return 0;
 }
 
-
-unsigned int gcd(unsigned int a, unsigned int b){
+unsigned int gcd(unsigned int a, unsigned int b) {
 	assert(a > 0 && b > 0);
-	if (a < b){
+	if (a < b) {
 		int tmp = b;
 		b = a;
 		a = tmp;
 	}
 	int r;
-	while (b > 0){
+	while (b > 0) {
 		r = a % b;
 		a = b;
 		b = r;

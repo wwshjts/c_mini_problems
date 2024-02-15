@@ -1,15 +1,14 @@
-#include<stdio.h>
-#include<stddef.h>
-#include<stdlib.h>
-#include"arr.h" 
+#include <stdio.h>
+#include <stdlib.h>
+#include "arr.h" 
 
-int main(void){
+int main(void) {
 	int len = 0;
 	int* arr = NULL;
-	do{
+	do {
 		int* tmp_arr = (int*) malloc((len + 1) * sizeof(int));
 		nullCheck(tmp_arr);
-		for(int i = 0; i < len; i++){
+		for (int i = 0; i < len; i++) {
 			tmp_arr[i] = arr[i];
 		}
 		free(arr);

@@ -1,15 +1,16 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
+int main() {
 	unsigned long n;
 	scanf("%lu", &n);
-	for(int i = 0; i <= n; i++){
-		if (i % 3 == 0 && i % 5 == 0)
+	for (int i = 0; i <= n; i++) {
+		if (i % 3 == 0 && i % 5 == 0) {
 			printf("fizz buzz\n");
-		else if (i % 3 == 0)
+		} else if (i % 3 == 0) {
 			printf("fizz\n");
-		else if (i % 5 == 0)
+		} else if (i % 5 == 0) {
 			printf("buzz\n");
+		}
 	}
 	return 0;
 }

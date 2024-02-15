@@ -1,3 +1,4 @@
+#include <stddef.h>
 void scanArr(int* a, size_t len);
 void printArr(int* a, size_t len);
 void revert(int* a, size_t len);

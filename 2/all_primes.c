@@ -1,6 +1,6 @@
-#include<stdio.h> 
+#include <stdio.h> 
 
-int main(){
+int main() {
 	unsigned long long n;
 	scanf("%llu", &n);
 	if (n < 2)

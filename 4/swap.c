@@ -2,7 +2,7 @@
 
 void swap(int* pa, int* pb);
 
-int main(void){
+int main() {
 	int x, y;
 	scanf("%d %d", &x, &y);
 	printf("x: %d y: %d \n", x, y);
@@ -11,7 +11,7 @@ int main(void){
 	return 0;
 }
 
-void swap(int* pa, int* pb){
+void swap(int* pa, int* pb) {
 	int tmp = *pa;
 	*pa = *pb;
 	*pb = tmp;

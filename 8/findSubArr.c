@@ -4,7 +4,7 @@
 #include"arr.h"
 #define SIZE 5
 
-int main(void){ 
+int main(){ 
 	int* arr1 = NULL; 
 	int* arr2 = NULL;
 	size_t len1, len2;

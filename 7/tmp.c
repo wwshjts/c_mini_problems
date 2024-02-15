@@ -1,8 +1,8 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include"arr.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "arr.h"
 
-int main(void){
+int main(){
 	int len;
 	printf("Lenght of array> ");
 	scanf("%d", &len);
