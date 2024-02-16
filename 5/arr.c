@@ -1,5 +1,5 @@
-#include<stddef.h>
-#include<stdio.h>
+#include <assert.h>
+#include "arr.h"
 
 void scanArr(int* a, size_t len) {
 	for(size_t i = 0; i < len; i++) {
@@ -34,17 +34,17 @@ int maxArr(int* a, size_t len) {
 	return res;
 }
 
-//Как тут быть с типами то..
-int findInArr(int* a, size_t len, int x) {
+int* findInArr(int* a, size_t len, int x) {
 	for (size_t i = 0; i < len; i++) {
 		if (x == a[i]) {
-			return i;
+			return &a[i];
 		}
 	}
-	return -1;
+	return NULL;
 }
 
 void extractDigits(int* a, size_t len, int x) {
+	assert(len >= 10);
 	size_t i = 0;
 	while (x > 0) {
 		a[i++] = x % 10;
@@ -61,12 +61,12 @@ int compareArrays(int* a, size_t len_a, int* b, size_t len_b) {
 		return 1;
 	} else {
 		for (size_t i = 0; i < len_a; i++) {
-			if(a[i] < b[i]) {
+			if (a[i] < b[i]) {
 				return -1;
 			} else if(a[i] > b[i]) {
 				return 1;
 			}
 		}
-	return 0;
+		return 0;
 	}
 }

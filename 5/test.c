@@ -9,7 +9,7 @@ int main(void) {
 	revert(arr, SIZE);
 	printArr(arr, SIZE);
 	printf("max %d\n", maxArr(arr, SIZE));
-	printf("index of 3 is %d\n", findlnArr(arr, SIZE, 3));
+	printf("There is number 3: %p \n", findInArr(arr, SIZE, 3));
 	int new_arr[10] = {1,2,3,4,5,6,7,8,9,10};
 	printArr(new_arr, 10);
 	extractDigits(new_arr, 10, 331);
