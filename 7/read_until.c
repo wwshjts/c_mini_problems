@@ -20,7 +20,7 @@ int main(void) {
 	revert(arr, len);
 	printArr(arr, len);
 	printf("max %d\n", maxArr(arr, len));
-	printf("index of 3 is %d\n", findlnArr(arr, len, 3));
+	printf("index of 3 is %p\n", findInArr(arr, len, 3));
 	int new_arr[10] = {1,2,3,4,5,6,7,8,9,10};
 	printArr(new_arr, 10);
 	extractDigits(arr, len, 331);
