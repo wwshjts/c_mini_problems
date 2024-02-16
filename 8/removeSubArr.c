@@ -16,6 +16,7 @@ int main(){
 	printf("Second array: ");
 	printArr(arr2, len2);
 	removeSubArr(arr1, &len1, arr2, len2);
+	printf("After len of arr1 %zu\n", len1);
 	printArr(arr1, len1);
 	free(arr1);
 	free(arr2);

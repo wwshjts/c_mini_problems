@@ -3,7 +3,7 @@
 #include "arr.h"
 
 void scanArr(int* a, size_t len) {
-	for(size_t i = 0; i < len; i++) {
+	for (size_t i = 0; i < len; i++) {
 		scanf("%d", a + i);
 	}
 }
@@ -80,14 +80,13 @@ int maxArr(int* a, size_t len) {
 	return res;
 }
 
-//Как тут быть с типами то..
-int findlnArr(int* a, int len, int x) {
+int* findlnArr(int* a, size_t len, int x) {
 	for (int i = 0; i < len; i++) {
 		if (x == a[i]) {
-			return i;
+			return &a[i];
 		}
 	}
-	return -1;
+	return NULL;
 }
 
 void extractDigits(int* a, size_t len, int x) {
@@ -139,9 +138,9 @@ void concatArr(int* a, size_t len_a, int* b, size_t len_b, int** arr_to_ret, siz
 }
 
 
-int findSubArr(int* a, size_t len_a, int* b, size_t len_b) {
+int* findSubArr(int* a, size_t len_a, int* b, size_t len_b) {
 	if (len_b > len_a) {
-		return -1;
+		return NULL;
 	}
 	for (size_t i = 0; i <= len_a - len_b; i++) {
 		int matchFlag = 1;
@@ -152,22 +151,21 @@ int findSubArr(int* a, size_t len_a, int* b, size_t len_b) {
 			}
 		}
 		if (matchFlag) {
-			return i;
+			return &a[i];
 		}
 	}
-	return -1;
+	return NULL;
 }
 
 void removeSubArr(int* a, size_t* len_a, int* b, size_t len_b) {
-	int index = findSubArr(a, *len_a, b, len_b);
+	int* sub = findSubArr(a, *len_a, b, len_b);
 	size_t len_to_ret = *len_a;
-	while (index > 0) {
-		for(int i = index; i < len_to_ret - len_b; i++) {
-			a[i] = a[i + len_b];
+	while (sub) {
+		for (size_t i = 0; i + len_b < *len_a; i++) {
+			sub[i] = sub[i + len_b];
 		}
 		len_to_ret -= len_b;
-		printArr(a, len_to_ret);
-		index = findSubArr(a, len_to_ret, b, len_b);
+		sub = findSubArr(a, len_to_ret, b, len_b);
 	}
 	*len_a = len_to_ret;
 }

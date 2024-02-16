@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<stddef.h> 
-#include<stdlib.h>
-#include"arr.h"
+#include <stdio.h>
+#include <stddef.h> 
+#include <stdlib.h>
+#include "arr.h"
 #define SIZE 5
 
 int main(){ 
@@ -16,7 +16,8 @@ int main(){
 	printArr(arr1, len1);
 	printf("Second array: ");
 	printArr(arr2, len2);
-	printf("%d\n", findSubArr(arr1, len1, arr2, len2));
+	printf("Sub arr: \n");
+	printArr(findSubArr(arr1, len1, arr2, len2), len2);
 	free(arr1);
 	free(arr2);
 	return 0;
