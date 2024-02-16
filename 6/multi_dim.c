@@ -1,15 +1,17 @@
-#include<stdio.h>
+#include <stdio.h>
 
 void scanArr(int a[4][4]);
 void printArr(int a[4][4]);
 void transpose(int a[4][4]);
 void swap(int* a, int* b);
 
-int main(void){
+int main(void) {
 	int arr[4][4];
 	scanArr(arr);
+	printf("arr: \n");
 	printArr(arr);
 	transpose(arr);
+	printf("transposed arr: \n");
 	printArr(arr);
 	return 0;
 }

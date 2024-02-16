@@ -2,7 +2,8 @@
 
 int main(){
 	unsigned long n, res = 0, x = 0, y = 0;
-	int com, game_flag = 1;
+	int game_flag = 1;
+	int com;
 	scanf("%lu", &n);
 	while (game_flag) {
 		for (int i = 0; i < n; i++) {
@@ -26,11 +27,11 @@ int main(){
 		scanf("%d", &com);
 		switch (com) {
 			case 8: 
-				y = (y - 1 < 0) ? y - 1: y;
+				y = (y == 0) ? y : y - 1;
 				res++;
 			break;
 			case 4: 
-				x = (x - 1 > 0) ? x - 1 : x;
+				x = (x == 0) ? x : x - 1;
 				res++;
 			break;
 			case 5: 
@@ -39,7 +40,6 @@ int main(){
 			break;
 			case 6:  
 				x = (x + 1 < n) ? x + 1 : x;
-				printf("x %lu", x + 1);
 				res++;
 			break;
 			default: game_flag = 0;
